@@ -1,0 +1,106 @@
+{
+  "model": {
+    "people": [
+      {
+        "location": 2,
+        "name": "User",
+        "description": "Użytkownik systemu",
+        "relationships": [
+          {
+            "description": "Uses",
+            "sourceId": "2",
+            "destinationId": "1",
+            "id": "3",
+            "tags": "Relationship",
+            "properties": {},
+            "perspectives": []
+          }
+        ],
+        "id": "2",
+        "tags": "Element,Person",
+        "properties": {},
+        "perspectives": []
+      }
+    ],
+    "softwareSystems": [
+      {
+        "location": 1,
+        "containers": [],
+        "name": "My System",
+        "description": "Opis mojego systemu",
+        "relationships": [],
+        "id": "1",
+        "tags": "Element,Software System",
+        "properties": {},
+        "perspectives": []
+      }
+    ],
+    "deploymentNodes": []
+  },
+  "views": {
+    "systemLandscapeViews": [],
+    "systemContextViews": [
+      {
+        "animations": [],
+        "key": "SystemContext",
+        "softwareSystemId": "1",
+        "description": "Diagram kontekstowy",
+        "elements": [
+          {
+            "id": "1",
+            "x": 0,
+            "y": 0
+          },
+          {
+            "id": "2",
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "relationships": [
+          {
+            "id": "3",
+            "vertices": []
+          }
+        ]
+      }
+    ],
+    "containerViews": [],
+    "componentViews": [],
+    "dynamicViews": [],
+    "deploymentViews": [],
+    "filteredViews": [],
+    "configuration": {
+      "styles": {
+        "relationships": [],
+        "elements": [
+          {
+            "tag": "Person",
+            "background": "#ff0000",
+            "color": "#ffffff",
+            "shape": 8
+          },
+          {
+            "tag": "Software System",
+            "background": "#0000ff",
+            "color": "#ffffff",
+            "shape": 1
+          }
+        ]
+      },
+      "branding": {},
+      "terminology": {},
+      "viewSortOrder": 0
+    }
+  },
+  "documentation": {
+    "sections": [],
+    "decisions": [],
+    "images": []
+  },
+  "name": "Example",
+  "description": "An example workspace",
+  "configuration": {
+    "users": []
+  }
+}
