@@ -1,14 +1,26 @@
 using Structurizr;
 using System.IO;
 using Newtonsoft.Json;
+using Structurizr.Api;
 
 namespace structurizr.Services
 {
     public class DiagramService
     {
+        private readonly string _structurizrKey;
+        private readonly string _structurizrSecret;
+        private readonly string _structurizrId;
+        private long _id;
+
+        public DiagramService()
+        {
+            _structurizrKey = Environment.GetEnvironmentVariable("STRUCTURIZR_KEY");
+            _structurizrSecret = Environment.GetEnvironmentVariable("STRUCTURIZR_SECRET");
+            _structurizrId = Environment.GetEnvironmentVariable("STRUCTURIZR_ID");
+        }
         public string GenerateDiagram(string data)
         {
-                        Workspace workspace = new Workspace("Getting Started", "This is a model of my software system.");
+            Workspace workspace = new Workspace("New start", "This is a model of my software system.");
             Model model = workspace.Model;
 
             Person user = model.AddPerson("User", "A user of my software system.");
@@ -24,12 +36,16 @@ namespace structurizr.Services
             styles.Add(new ElementStyle(Tags.SoftwareSystem) { Background = "#1168bd", Color = "#ffffff" });
             styles.Add(new ElementStyle(Tags.Person) { Background = "#08427b", Color = "#ffffff", Shape = Shape.Person });
 
-            // Serializacja do JSON
             string json = JsonConvert.SerializeObject(workspace, Formatting.Indented);
 
-            // Zapis do pliku
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "diagram.json");
             File.WriteAllText(filePath, json);
+
+            StructurizrClient structurizrClient = new StructurizrClient(_structurizrKey, _structurizrSecret);
+
+
+            long.TryParse(_structurizrId, out _id);
+            structurizrClient.PutWorkspace(_id, workspace);
 
             return "/diagram.json";
         }

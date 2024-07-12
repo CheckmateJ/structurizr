@@ -2,21 +2,21 @@
   "model": {
     "people": [
       {
-        "location": 2,
+        "location": 0,
         "name": "User",
-        "description": "Użytkownik systemu",
+        "description": "A user of my software system.",
         "relationships": [
           {
             "description": "Uses",
-            "sourceId": "2",
-            "destinationId": "1",
+            "sourceId": "1",
+            "destinationId": "2",
             "id": "3",
             "tags": "Relationship",
             "properties": {},
             "perspectives": []
           }
         ],
-        "id": "2",
+        "id": "1",
         "tags": "Element,Person",
         "properties": {},
         "perspectives": []
@@ -24,12 +24,12 @@
     ],
     "softwareSystems": [
       {
-        "location": 1,
+        "location": 0,
         "containers": [],
-        "name": "My System",
-        "description": "Opis mojego systemu",
+        "name": "Software System",
+        "description": "My software system.",
         "relationships": [],
-        "id": "1",
+        "id": "2",
         "tags": "Element,Software System",
         "properties": {},
         "perspectives": []
@@ -43,16 +43,16 @@
       {
         "animations": [],
         "key": "SystemContext",
-        "softwareSystemId": "1",
-        "description": "Diagram kontekstowy",
+        "softwareSystemId": "2",
+        "description": "An example of a System Context diagram.",
         "elements": [
           {
-            "id": "1",
+            "id": "2",
             "x": 0,
             "y": 0
           },
           {
-            "id": "2",
+            "id": "1",
             "x": 0,
             "y": 0
           }
@@ -75,16 +75,15 @@
         "relationships": [],
         "elements": [
           {
-            "tag": "Person",
-            "background": "#ff0000",
-            "color": "#ffffff",
-            "shape": 8
+            "tag": "Software System",
+            "background": "#1168bd",
+            "color": "#ffffff"
           },
           {
-            "tag": "Software System",
-            "background": "#0000ff",
+            "tag": "Person",
+            "background": "#08427b",
             "color": "#ffffff",
-            "shape": 1
+            "shape": 8
           }
         ]
       },
@@ -98,8 +97,8 @@
     "decisions": [],
     "images": []
   },
-  "name": "Example",
-  "description": "An example workspace",
+  "name": "New start 2",
+  "description": "This is a model of my software system.",
   "configuration": {
     "users": []
   }
